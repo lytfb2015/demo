@@ -1,0 +1,11 @@
+# Spring
+spring: 
+  application:
+    # 应用名称
+    name: iotemp-provider
+  profiles:
+    # 环境配置
+    active: dev
+grpc:
+  server:
+    port: 9000

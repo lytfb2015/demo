@@ -1,0 +1,17 @@
+# Tomcat
+server:
+  port: 9999
+  servlet:
+    context-path: /
+grpc:
+  client:
+    GLOBAL:
+      negotiation-type: plaintext
+# Spring
+spring: 
+  application:
+    # 应用名称
+    name: yogcn-iot-aggregation
+  profiles:
+    # 环境配置
+    active: dev

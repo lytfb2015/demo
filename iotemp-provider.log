@@ -1,0 +1,71 @@
+[2022-09-04 10:59:51.750][INFO][main][c.yogcn.iot.provider.ProviderApplication:55][]: Starting ProviderApplication on DESKTOP-6VHAITD with PID 4684 (E:\wokspace\yogcn-iot-parent\yogcn-iot-provider\build\classes\java\main started by Administrator in E:\wokspace\yogcn-iot-parent)
+[2022-09-04 10:59:51.752][DEBUG][main][c.yogcn.iot.provider.ProviderApplication:56][]: Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+[2022-09-04 10:59:51.752][INFO][main][c.yogcn.iot.provider.ProviderApplication:655][]: The following profiles are active: dev
+[2022-09-04 10:59:52.356][INFO][main][o.apache.coyote.http11.Http11NioProtocol:173][]: Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-04 10:59:52.357][INFO][main][org.apache.catalina.core.StandardService:173][]: Starting service [Tomcat]
+[2022-09-04 10:59:52.357][INFO][main][org.apache.catalina.core.StandardEngine:173][]: Starting Servlet engine: [Apache Tomcat/9.0.37]
+[2022-09-04 10:59:52.432][INFO][main][o.a.c.c.C.[Tomcat].[localhost].[/]:173][]: Initializing Spring embedded WebApplicationContext
+[2022-09-04 10:59:52.615][DEBUG][main][n.d.b.g.c.a.GrpcCommonCodecAutoConfiguration:54][]: Found GrpcCodecDiscoverer -> Creating custom CompressorRegistry
+[2022-09-04 10:59:52.615][DEBUG][main][n.d.b.g.c.c.AnnotationGrpcCodecDiscoverer:49][]: Searching for codecs...
+[2022-09-04 10:59:52.618][DEBUG][main][n.d.b.g.c.c.AnnotationGrpcCodecDiscoverer:60][]: Done
+[2022-09-04 10:59:52.621][DEBUG][main][n.d.b.g.c.a.GrpcCommonCodecAutoConfiguration:70][]: Found GrpcCodecDiscoverer -> Creating custom DecompressorRegistry
+[2022-09-04 10:59:52.642][INFO][main][n.d.b.g.s.a.GrpcServerFactoryAutoConfiguration:74][]: Detected grpc-netty-shaded: Creating ShadedNettyGrpcServerFactory
+[2022-09-04 10:59:52.664][DEBUG][main][n.d.b.g.s.i.AnnotationGlobalServerInterceptorConfigurer:67][]: Registering GlobalServerInterceptor: tenantServerInterceptor (com.yogcn.iot.provider.interceptor.TenantServerInterceptor@1917d90f)
+[2022-09-04 10:59:52.665][DEBUG][main][n.d.b.g.s.i.AnnotationGlobalServerInterceptorConfigurer:67][]: Registering GlobalServerInterceptor: grpcRequestScope (net.devh.boot.grpc.server.scope.GrpcRequestScope@21fff664)
+[2022-09-04 10:59:52.666][DEBUG][main][n.d.b.g.s.s.AnnotationGrpcServiceDiscoverer:67][]: Found gRPC service: com.iot.emp.grpc.facade.DeviceManagement, bean: deviceManagementFacade, class: com.yogcn.iot.provider.facade.DeviceManagementFacade
+[2022-09-04 10:59:52.668][DEBUG][main][n.d.b.g.s.s.AnnotationGrpcServiceDiscoverer:67][]: Found gRPC service: grpc.health.v1.Health, bean: grpcHealthService, class: io.grpc.services.HealthServiceImpl
+[2022-09-04 10:59:52.672][DEBUG][main][n.d.b.g.s.s.AnnotationGrpcServiceDiscoverer:67][]: Found gRPC service: grpc.reflection.v1alpha.ServerReflection, bean: protoReflectionService, class: io.grpc.protobuf.services.ProtoReflectionService
+[2022-09-04 10:59:52.724][INFO][main][o.apache.coyote.http11.Http11NioProtocol:173][]: Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-04 10:59:52.745][DEBUG][main][i.g.n.s.i.n.u.i.l.InternalLoggerFactory:45][]: Using SLF4J as the default logging framework
+[2022-09-04 10:59:52.746][DEBUG][main][i.g.n.s.i.n.u.internal.PlatformDependent:1015][]: Platform: Windows
+[2022-09-04 10:59:52.747][DEBUG][main][i.g.n.s.i.n.u.i.PlatformDependent0:408][]: -Dio.netty.noUnsafe: false
+[2022-09-04 10:59:52.747][DEBUG][main][i.g.n.s.i.n.u.i.PlatformDependent0:876][]: Java version: 8
+[2022-09-04 10:59:52.747][DEBUG][main][i.g.n.s.i.n.u.i.PlatformDependent0:125][]: sun.misc.Unsafe.theUnsafe: available
+[2022-09-04 10:59:52.748][DEBUG][main][i.g.n.s.i.n.u.i.PlatformDependent0:149][]: sun.misc.Unsafe.copyMemory: available
+[2022-09-04 10:59:52.748][DEBUG][main][i.g.n.s.i.n.u.i.PlatformDependent0:187][]: java.nio.Buffer.address: available
+[2022-09-04 10:59:52.748][DEBUG][main][i.g.n.s.i.n.u.i.PlatformDependent0:252][]: direct buffer constructor: available
+[2022-09-04 10:59:52.748][DEBUG][main][i.g.n.s.i.n.u.i.PlatformDependent0:326][]: java.nio.Bits.unaligned: available, true
+[2022-09-04 10:59:52.748][DEBUG][main][i.g.n.s.i.n.u.i.PlatformDependent0:391][]: jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[2022-09-04 10:59:52.748][DEBUG][main][i.g.n.s.i.n.u.i.PlatformDependent0:398][]: java.nio.DirectByteBuffer.<init>(long, int): available
+[2022-09-04 10:59:52.748][DEBUG][main][i.g.n.s.i.n.u.internal.PlatformDependent:1058][]: sun.misc.Unsafe: available
+[2022-09-04 10:59:52.749][DEBUG][main][i.g.n.s.i.n.u.internal.PlatformDependent:1177][]: -Dio.netty.tmpdir: C:\Users\ADMINI~1\AppData\Local\Temp (java.io.tmpdir)
+[2022-09-04 10:59:52.749][DEBUG][main][i.g.n.s.i.n.u.internal.PlatformDependent:1256][]: -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[2022-09-04 10:59:52.750][DEBUG][main][i.g.n.s.i.n.u.internal.PlatformDependent:177][]: -Dio.netty.maxDirectMemory: 3803185152 bytes
+[2022-09-04 10:59:52.750][DEBUG][main][i.g.n.s.i.n.u.internal.PlatformDependent:184][]: -Dio.netty.uninitializedArrayAllocationThreshold: -1
+[2022-09-04 10:59:52.751][DEBUG][main][i.g.n.s.i.n.util.internal.CleanerJava6:92][]: java.nio.ByteBuffer.cleaner(): available
+[2022-09-04 10:59:52.751][DEBUG][main][i.g.n.s.i.n.u.internal.PlatformDependent:204][]: -Dio.netty.noPreferDirect: false
+[2022-09-04 10:59:52.775][INFO][main][n.d.b.g.s.s.AbstractGrpcServerFactory:108][]: Registered gRPC service: com.iot.emp.grpc.facade.DeviceManagement, bean: deviceManagementFacade, class: com.yogcn.iot.provider.facade.DeviceManagementFacade
+[2022-09-04 10:59:52.776][INFO][main][n.d.b.g.s.s.AbstractGrpcServerFactory:108][]: Registered gRPC service: grpc.health.v1.Health, bean: grpcHealthService, class: io.grpc.services.HealthServiceImpl
+[2022-09-04 10:59:52.776][INFO][main][n.d.b.g.s.s.AbstractGrpcServerFactory:108][]: Registered gRPC service: grpc.reflection.v1alpha.ServerReflection, bean: protoReflectionService, class: io.grpc.protobuf.services.ProtoReflectionService
+[2022-09-04 10:59:52.784][DEBUG][main][i.g.n.s.i.n.c.MultithreadEventLoopGroup:44][]: -Dio.netty.eventLoopThreads: 24
+[2022-09-04 10:59:52.793][DEBUG][main][i.g.n.s.i.n.u.i.InternalThreadLocalMap:56][]: -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[2022-09-04 10:59:52.794][DEBUG][main][i.g.n.s.i.n.u.i.InternalThreadLocalMap:59][]: -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[2022-09-04 10:59:52.797][DEBUG][main][i.g.n.s.i.netty.channel.nio.NioEventLoop:106][]: -Dio.netty.noKeySetOptimization: false
+[2022-09-04 10:59:52.797][DEBUG][main][i.g.n.s.i.netty.channel.nio.NioEventLoop:107][]: -Dio.netty.selectorAutoRebuildThreshold: 512
+[2022-09-04 10:59:52.798][DEBUG][main][i.g.n.s.i.n.u.internal.PlatformDependent:919][]: org.jctools-core.MpscChunkedArrayQueue: available
+[2022-09-04 10:59:52.814][DEBUG][main][i.g.n.s.i.n.util.ResourceLeakDetector:130][]: -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+[2022-09-04 10:59:52.815][DEBUG][main][i.g.n.s.i.n.util.ResourceLeakDetector:131][]: -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+[2022-09-04 10:59:52.818][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:156][]: -Dio.netty.allocator.numHeapArenas: 24
+[2022-09-04 10:59:52.818][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:157][]: -Dio.netty.allocator.numDirectArenas: 24
+[2022-09-04 10:59:52.818][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:159][]: -Dio.netty.allocator.pageSize: 8192
+[2022-09-04 10:59:52.818][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:164][]: -Dio.netty.allocator.maxOrder: 11
+[2022-09-04 10:59:52.819][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:168][]: -Dio.netty.allocator.chunkSize: 16777216
+[2022-09-04 10:59:52.819][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:169][]: -Dio.netty.allocator.tinyCacheSize: 512
+[2022-09-04 10:59:52.819][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:170][]: -Dio.netty.allocator.smallCacheSize: 256
+[2022-09-04 10:59:52.819][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:171][]: -Dio.netty.allocator.normalCacheSize: 64
+[2022-09-04 10:59:52.819][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:172][]: -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[2022-09-04 10:59:52.819][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:173][]: -Dio.netty.allocator.cacheTrimInterval: 8192
+[2022-09-04 10:59:52.819][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:174][]: -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[2022-09-04 10:59:52.819][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:175][]: -Dio.netty.allocator.useCacheForAllThreads: true
+[2022-09-04 10:59:52.819][DEBUG][main][i.g.n.s.i.n.b.PooledByteBufAllocator:176][]: -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[2022-09-04 10:59:52.829][DEBUG][main][i.g.n.s.i.netty.channel.DefaultChannelId:79][]: -Dio.netty.processId: 4684 (auto-detected)
+[2022-09-04 10:59:52.830][DEBUG][main][i.g.netty.shaded.io.netty.util.NetUtil:139][]: -Djava.net.preferIPv4Stack: false
+[2022-09-04 10:59:52.830][DEBUG][main][i.g.netty.shaded.io.netty.util.NetUtil:140][]: -Djava.net.preferIPv6Addresses: false
+[2022-09-04 10:59:52.873][DEBUG][main][i.g.netty.shaded.io.netty.util.NetUtil:224][]: Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[2022-09-04 10:59:52.874][DEBUG][main][i.g.netty.shaded.io.netty.util.NetUtil:289][]: Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[2022-09-04 10:59:52.919][DEBUG][main][i.g.n.s.i.netty.channel.DefaultChannelId:101][]: -Dio.netty.machineId: d4:5d:64:ff:fe:20:72:37 (auto-detected)
+[2022-09-04 10:59:52.934][DEBUG][main][i.g.n.shaded.io.netty.buffer.ByteBufUtil:86][]: -Dio.netty.allocator.type: pooled
+[2022-09-04 10:59:52.934][DEBUG][main][i.g.n.shaded.io.netty.buffer.ByteBufUtil:95][]: -Dio.netty.threadLocalDirectBufferSize: 0
+[2022-09-04 10:59:52.935][DEBUG][main][i.g.n.shaded.io.netty.buffer.ByteBufUtil:98][]: -Dio.netty.maxThreadLocalCharBufferSize: 16384
+[2022-09-04 10:59:52.942][INFO][main][n.d.b.g.s.s.GrpcServerLifecycle:116][]: gRPC Server started, listening on address: *, port: 9000
+[2022-09-04 10:59:52.950][INFO][main][c.yogcn.iot.provider.ProviderApplication:61][]: Started ProviderApplication in 1.557 seconds (JVM running for 2.032)

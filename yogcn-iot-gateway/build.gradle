@@ -1,0 +1,17 @@
+group 'com.yogcn.iot.gateway'
+description '路由网关服务'
+
+apply plugin: 'application'
+
+mainClassName = 'com.yogcn.iot.gateway.GatewayApplication'
+
+dependencies {
+    implementation project(":yogcn-iot-common")
+    implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'
+    implementation 'com.alibaba.cloud:spring-cloud-alibaba-sentinel-gateway'
+    implementation 'com.alibaba.csp:sentinel-spring-cloud-gateway-adapter'
+
+}

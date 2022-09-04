@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yogcn.iot.provider.mapper.DomainMapper">
+    <!--返回模型-->
+    <resultMap id="domainMap" type="com.yogcn.iot.provider.model.Domain">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="parent_id" property="parentId"/>
+        <result column="creator" property="creator"/>
+        <result column="updater" property="updater"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="update_at" property="updateAt"/>
+    </resultMap>
+
+    <sql id="BaseColumn">
+         id, `name`, parent_id, creator, updater,   created_at ,   update_at
+    </sql>
+
+    <!--分组数据-->
+    <select id="queryByParentId" resultMap="domainMap">
+        select  <include refid="BaseColumn"/>
+        from tbl_thing_model_domain where parent_id=#{pid}
+    </select>
+
+</mapper>

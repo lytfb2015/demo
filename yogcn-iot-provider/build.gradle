@@ -1,0 +1,31 @@
+buildscript {
+    ext{
+        springBootVersion = '2.3.2.RELEASE'
+    }
+
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+
+group 'com.yogcn.iot.provider'
+description '服务提供者'
+
+apply plugin: 'application'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+mainClassName = 'com.yogcn.iot.provider.ProviderApplication'
+
+dependencies {
+    compile "net.devh:grpc-server-spring-boot-starter:2.13.0.RELEASE"
+
+    compile project(":yogcn-iot-common")
+    compile project(":yogcn-iot-provider-api")
+    compile 'org.springframework.boot:spring-boot-starter-web'
+
+}

@@ -1,0 +1,9 @@
+rootProject.name = 'yogcn-iot-parent'
+include 'yogcn-iot-gateway'
+include 'yogcn-iot-common'
+include 'yogcn-iot-provider'
+include 'yogcn-iot-aggregation'
+include 'yogcn-iot-provider'
+include 'yogcn-iot-provider-api'
+//include 'yogcn-iot-api'
+

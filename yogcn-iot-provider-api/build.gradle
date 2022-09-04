@@ -1,0 +1,45 @@
+plugins{
+    id "com.google.protobuf" version "0.8.8"
+    id "java"
+}
+group 'com.yogcn.iot.provider.api'
+
+dependencies {
+    compile "net.devh:grpc-server-spring-boot-starter:2.13.0.RELEASE"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+
+protobuf{
+    generatedFilesBaseDir = "$projectDir/src/generated"
+
+    clean {
+        delete generatedFilesBaseDir
+    }
+    protoc {
+        //从仓库下载
+        artifact = 'com.google.protobuf:protoc:3.1.0'
+    }
+
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:1.29.0"
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+
+
+}
+idea {
+    module {
+        sourceDirs += file("src/generated/main/java")
+        sourceDirs += file("src/generated/main/grpc")
+        generatedSourceDirs += file("src/generated/main/java")
+        generatedSourceDirs += file("src/generated/main/grpc")
+    }
+}

@@ -1,0 +1,88 @@
+buildscript {
+    ext{
+        springBootVersion = '2.3.2.RELEASE'
+    }
+
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+
+group 'com.yogcn.iot'
+version '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenLocal();
+    //maven { url "${NEXUS_URL}/repository/maven-public/" }
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    mavenCentral()
+}
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'com.yogcn.iot'
+    version = '2.0.0-SNAPSHOT'
+
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    ext {
+        set('springBootVersion', "2.3.2.RELEASE")
+        set('springBootAdminVersion', "2.2.1")
+        set('springCloudAlibabaVersion', "2.2.1.RELEASE")
+        set('springCloudVersion', "Hoxton.SR9")
+        set('lombokVersion', "1.18.12")
+        set('sentinelVersion', "1.7.1")
+
+        set('httpClientVersion', "4.5.12")
+
+
+
+    }
+    repositories{
+       // maven { url "${NEXUS_URL}/repository/maven-public/" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        mavenCentral()
+    }
+
+//    configurations {
+//        developmentOnly
+//        runtimeClasspath {
+//            extendsFrom developmentOnly
+//        }
+//        compileOnly {
+//            extendsFrom annotationProcessor
+//        }
+//    }
+
+    dependencies {
+        compile "org.apache.httpcomponents:httpclient:${httpClientVersion}"
+        compile "commons-collections:commons-collections:3.2.2"
+        compile "commons-io:commons-io:2.6"
+        compile 'org.apache.commons:commons-lang3:3.8.1'
+        compile "org.springframework.boot:spring-boot-starter-logging:${springBootVersion}"
+        compileOnly "org.projectlombok:lombok:${lombokVersion}"
+        annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    }
+
+    dependencyManagement {
+
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
+        }
+
+    }
+    test {
+        useJUnitPlatform()
+        ignoreFailures = true
+    }
+}

@@ -1,0 +1,41 @@
+# Tomcat
+server:
+  port: 8888
+
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: yogcn-iot-gateway
+  profiles:
+    # 环境配置
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 128.160.171.92:8848
+        group: DEMO_GROUP
+      config:
+        # 配置中心地址
+#        server-addr: 128.160.181.16:8848
+        server-addr: 128.160.171.92:8848
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        group: DEMO_GROUP
+        prefix: application-gateway-${spring.profiles.active}
+    sentinel:
+      # 取消控制台懒加载
+      eager: true
+      filter:
+        enabled: false
+      transport:
+        port: 8719
+        # 控制台地址
+        dashboard: 127.0.0.1:8080
+feign:
+  sentinel:
+    enabled: true

@@ -1,0 +1,16 @@
+group 'com.yogcn.iot.aggregation'
+description '聚合服务：负责将http转gRPC'
+
+apply plugin: 'application'
+
+mainClassName = 'com.yogcn.iot.aggregation.AggregationApplication'
+
+dependencies {
+    compile project(":yogcn-iot-common")
+    compile project(":yogcn-iot-provider-api")
+    compile "net.devh:grpc-client-spring-boot-starter:2.9.0.RELEASE"
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+
+}

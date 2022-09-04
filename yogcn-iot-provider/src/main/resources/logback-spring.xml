@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" scanPeriod="60 seconds" debug="false">
+
+    <springProperty scope="context" name="LOG_PATH" source="application.logs"/>
+
+    <property name="DefaultPattern"
+              value="[%d{yyyy-MM-dd HH:mm:ss.SSS}][%level][%thread][%logger{40}:%line][%X{traceId}]: %msg%n"/>
+    <!-- 标准输出到指定文件 -->
+    <appender name="Fileout" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./iotemp-provider.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./iotemp-provider_%d{yyyyMMddHH}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>${DefaultPattern}</Pattern>
+        </encoder>
+    </appender>
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>${DefaultPattern}</Pattern>
+        </encoder>
+    </appender>
+
+
+    <root level="DEBUG">
+        <appender-ref ref="Console"/>
+        <appender-ref ref="Fileout"/>
+    </root>
+
+
+    <logger name="org.springframework" level="WARN"/>
+</configuration>
+

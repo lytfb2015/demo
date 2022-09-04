@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.iot.emp.grpc.facade;
+
+option java_multiple_files =true ;
+option java_package = "com.iot.emp.grpc.facade";
+option java_outer_classname="DeviceManagementServices";
+
+
+service DeviceManagement{
+    rpc jt808Encode(GEncodeRequest) returns(GJt808Response){}
+
+    rpc jt808Decode(GDecodeRequest) returns(GJt808Response){}
+}
+
+message GEncodeRequest{
+    string deviceSn = 1 ;
+    string tenantId = 2 ;
+    string plaintext = 3 ;
+
+}
+
+message GDecodeRequest{
+    string deviceSn = 1 ;
+    string tenantId = 2 ;
+    string ciphertext = 3 ;
+}
+
+message GJt808Response{
+    bool status = 1 ;
+    string code = 2 ;
+    string errMsg = 3 ;
+    string result = 4 ;
+}
